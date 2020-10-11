@@ -27,8 +27,7 @@
         }
     </style>
     <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="js/no1.js">
-    </script>
+<%--    <script type="text/javascript" src="js/no1.js"></script>--%>
 </head>
 
 <body>
@@ -43,7 +42,7 @@
                 <td>${us.createDate}</td>
                 <td>
 <%--                <a href="keywordServlet?name=${us.name}&comm=del">删除</a>&nbsp;--%>
-                    <a href="javascript:del(${us.name})">删除</a>
+                    <a href="javascript:del('${us.name}')">删除</a>
                 </td>
             </tr>
         </c:forEach>
@@ -52,6 +51,15 @@
     <a href="add.jsp">添加关键词</a>&nbsp;
     </div>
 </form>
+<script type="text/javascript">
 
+    function del(name) {
+            alert(name);
+            const aa = confirm("你确定要删除吗？");
+            if (aa) {
+                    location.href = "keywordServlet?&name=" + name + "&comm=del";
+                }
+        }
+</script>
 </body>
 </html>

@@ -6,10 +6,3 @@ $(document).ready(function () {
     $("table").css("width", "600px"); //为表格添加样式，设置表格长度为300像素
 
 });
-function del(name) {
-        alert("hhh");
-        var aa = confirm("你确定要删除吗？");
-        if (aa) {
-            location.href = "keywordServlet?name=" + name + "&comm=del";
-        }
-}
